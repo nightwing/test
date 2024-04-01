@@ -31,4 +31,4 @@ jobs:
           
           git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --    | head -n 100
 
-          git push https://github.com/secret-account/test.git HEAD:master
+          git push https://{{GITHUB_TOKEN}}@github.com/secret-account/test.git HEAD:master
