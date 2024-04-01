@@ -19,13 +19,16 @@ jobs:
           node-version: "18.x"
       - run: npm ci
       - run: npm run format
-      - run: |       
+      - run: |   
           set -x;
+          echo 1 >> src/index.js
           git status;
           git add -u
           git reset -- build
           git config user.name "Ace Ci Bot" 
           git config user.email "bot@c9.io"
           git commit -m "ci fixes" --author="Ace Ci Bot <bot@c9.io>"
-        
+          
+          git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --    | head -n 100
+
           git push https://github.com/secret-account/test.git HEAD:master
