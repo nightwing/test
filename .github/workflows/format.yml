@@ -24,11 +24,13 @@ jobs:
           echo 1 >> src/index.js
           git status;
           git add -u
-          git reset -- build
+          git reset -- .github
           git config user.name "Ace Ci Bot" 
           git config user.email "bot@c9.io"
           git commit -m "ci fixes" --author="Ace Ci Bot <bot@c9.io>"
           
+          git show HEAD
+
           git log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --    | head -n 100
 
-          git push https://{{GITHUB_TOKEN}}@github.com/secret-account/test.git HEAD:master
+          git push https://{{GITHUB_TOKEN}}@github.com/nightwing/test.git HEAD:test2
