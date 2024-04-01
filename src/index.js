@@ -1,6 +1,6 @@
-
-console.log("new")
+console.log("new");
 console.log("mark");
-console.log("markier")
+console.log("markier");
 console.log("mark");
-console.log("new")
+console.log("new");
+1
